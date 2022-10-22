@@ -38,8 +38,7 @@
     "commands": [
       {
         "command": "sourceMapVisualization.show",
-        "category": "Source Map Visualization",
-        "title": "Show Source Map Visualization"
+        "title": "Source Map Visualization"
       }
     ],
     "menus": {
