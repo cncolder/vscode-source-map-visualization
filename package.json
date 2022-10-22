@@ -2,7 +2,7 @@
   "publisher": "colder",
   "name": "source-map-visualization",
   "displayName": "Source Map Visualization",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@7.13.6",
   "description": "A simple visualization of source map data",
@@ -32,8 +32,25 @@
     "vscode": "^1.69.0"
   },
   "activationEvents": [
-    "onLanguage:json"
+    "onCommand:sourceMapVisualization.show"
   ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "sourceMapVisualization.show",
+        "category": "Source Map Visualization",
+        "title": "Show Source Map Visualization"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "sourceMapVisualization.show",
+          "group": "z_commands"
+        }
+      ]
+    }
+  },
   "scripts": {
     "build": "tsup src/index.ts --external vscode",
     "dev": "nr build --watch",
@@ -49,7 +66,7 @@
     "@antfu/eslint-config": "^0.27.0",
     "@antfu/ni": "^0.18.2",
     "@types/node": "^18.11.3",
-    "@types/vscode": "^1.72.0",
+    "@types/vscode": "^1.69.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.25.0",
     "esno": "^0.16.3",

@@ -1,6 +1,20 @@
-# source-map-visualization
+<p align="center">
+<img src="https://github.com/cncolder/vscode-source-map-visualization/blob/main/res/icon.png" height="150">
+</p>
 
-<a href="https://marketplace.visualstudio.com/items?itemName=colder.source-map-visualization" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/colder.source-map-visualization.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+<h1 align="center">Source Map Visualization <sup>VS Code</sup></h1>
+
+<p align="center">
+<a href="https://marketplace.visualstudio.com/items?itemName=colder.source-map-visualization" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/colder.source-map-visualization.svg?color=eee&label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+</p>
+
+<p align="center">
+This is a visualization of JavaScript/CSS source map data, which is useful for debugging problems with generated source maps. It's designed to be high-performance so it doesn't fall over with huge source maps.
+</p>
+
+## Usage
+
+Right clicks on the minify code. Select `Source Map Visualization` in the context menu.
 
 ## License
 
