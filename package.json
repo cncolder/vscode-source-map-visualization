@@ -16,12 +16,12 @@
   "bugs": {
     "url": "https://github.com/cncolder/vscode-source-map-visualization/issues"
   },
-  "categories": [
-    "Visualization"
-  ],
   "keywords": [
     "Source Map",
     "visualization"
+  ],
+  "categories": [
+    "Visualization"
   ],
   "main": "./dist/index.js",
   "icon": "res/icon.png",
