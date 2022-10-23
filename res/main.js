@@ -5,7 +5,7 @@
   fileListParent.style.maxWidth = 'initial'
 
   const gotoInput = document.createElement('input')
-  gotoInput.placeholder = 'line:col'
+  gotoInput.placeholder = ':line:col'
   gotoInput.addEventListener('input', (e) => {
     const v = e.target.value
     const [line = 0, col = 0] = v
