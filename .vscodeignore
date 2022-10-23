@@ -1,5 +1,6 @@
-src
-node_modules
-test
-.github
-.vscode
+**
+!dist
+!res
+!package.json
+!LICENSE
+!README.md

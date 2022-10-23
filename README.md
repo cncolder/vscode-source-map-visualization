@@ -16,6 +16,8 @@ This is a visualization of JavaScript/CSS source map data, which is useful for d
 
 Right clicks on the minify code. Select `Source Map Visualization` in the context menu.
 
+![Demo](https://raw.githubusercontent.com/cncolder/vscode-source-map-visualization/main/docs/demo.gif)
+
 ## Thanks
 
 [evanw/source-map-visualization](https://github.com/evanw/source-map-visualization)
