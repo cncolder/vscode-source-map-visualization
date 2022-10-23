@@ -1,11 +1,11 @@
 <p align="center">
-<img src="https://github.com/cncolder/vscode-source-map-visualization/blob/main/res/icon.png" height="150">
+<img src="https://raw.githubusercontent.com/cncolder/vscode-source-map-visualization/main/res/icon.png" height="150">
 </p>
 
 <h1 align="center">Source Map Visualization <sup>VS Code</sup></h1>
 
 <p align="center">
-<a href="https://marketplace.visualstudio.com/items?itemName=colder.source-map-visualization" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/colder.source-map-visualization.svg?color=eee&label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=colder.source-map-visualization" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/colder.source-map-visualization.svg?label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 </p>
 
 <p align="center">
@@ -15,6 +15,10 @@ This is a visualization of JavaScript/CSS source map data, which is useful for d
 ## Usage
 
 Right clicks on the minify code. Select `Source Map Visualization` in the context menu.
+
+## Thanks
+
+[evanw/source-map-visualization](https://github.com/evanw/source-map-visualization)
 
 ## License
 
