@@ -18,7 +18,16 @@
   },
   "keywords": [
     "Source Map",
-    "Visualization"
+    "Visualization",
+    "sourcemap",
+    "source-map",
+    "sourcemaps",
+    "map",
+    ".map",
+    "jsmap",
+    ".js.map",
+    "cssmap",
+    ".css.map"
   ],
   "categories": [
     "Visualization"
