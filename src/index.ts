@@ -1,9 +1,30 @@
 import * as vscode from 'vscode'
 
 export function activate(context: vscode.ExtensionContext) {
+  // Track currently webview panel
+  let currentPanel: vscode.WebviewPanel | undefined
+
   context.subscriptions.push(
     vscode.commands.registerCommand('sourceMapVisualization.show', () => {
-      vscode.window.setStatusBarMessage('Show source map visualization...', show(context.extensionUri))
+      if (currentPanel) {
+        // If we already have a panel, show it in the target column
+        currentPanel.reveal(getViewColumn())
+        updatePanel(currentPanel)
+      }
+      else {
+        // Otherwise, create a new panel
+        vscode.window.setStatusBarMessage('Show source map visualization...', show(context.extensionUri).then((panel) => {
+          currentPanel = panel
+          // Reset when the current panel is closed
+          panel.onDidDispose(
+            () => {
+              currentPanel = undefined
+            },
+            null,
+            context.subscriptions,
+          )
+        }))
+      }
     }),
   )
 }
@@ -11,6 +32,40 @@ export function activate(context: vscode.ExtensionContext) {
 const viewType = 'sourceMapVisualization'
 
 async function show(extensionUri: vscode.Uri) {
+  const panel = vscode.window.createWebviewPanel(
+    viewType,
+    'Source Map Visualization',
+    getViewColumn(),
+    {
+      enableScripts: true,
+      retainContextWhenHidden: true,
+    },
+  )
+
+  panel.webview.html = getHtmlForWebview(panel.webview, extensionUri)
+
+  updatePanel(panel)
+
+  return panel
+}
+
+function getViewColumn() {
+  return vscode.window.activeTextEditor?.viewColumn || vscode.ViewColumn.One
+}
+
+async function updatePanel(panel: vscode.WebviewPanel) {
+  if (!panel)
+    return
+  const data = await getCodeAndMap()
+  if (!data)
+    return
+  panel.webview.postMessage({
+    command: 'update',
+    data,
+  })
+}
+
+async function getCodeAndMap() {
   const editor = vscode.window.activeTextEditor
   if (!editor)
     return
@@ -36,24 +91,7 @@ async function show(extensionUri: vscode.Uri) {
   const code = document.getText(editor.selection) || await vscode.workspace.fs.readFile(vscode.Uri.file(file)).then(buffer => new TextDecoder('utf-8').decode(buffer))
   const map = await vscode.workspace.fs.readFile(vscode.Uri.file(mapFile)).then(buffer => new TextDecoder('utf-8').decode(buffer))
 
-  const column = vscode.window.activeTextEditor
-    ? vscode.window.activeTextEditor.viewColumn
-    : undefined
-
-  const panel = vscode.window.createWebviewPanel(
-    viewType,
-    'Source Map Visualization',
-    column || vscode.ViewColumn.One,
-    {
-      enableScripts: true,
-    },
-  )
-
-  panel.webview.html = getHtmlForWebview(panel.webview, extensionUri)
-  panel.webview.postMessage({
-    command: 'update',
-    data: { code, map },
-  })
+  return { code, map }
 }
 
 function getHtmlForWebview(webview: vscode.Webview, extensionUri: vscode.Uri) {
