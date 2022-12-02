@@ -72,23 +72,35 @@ async function getCodeAndMap() {
 
   const document = editor.document
 
-  const file = document.fileName
+  const file = document.isUntitled ? 'Untitled Document' : document.fileName
   const dir = file.replace(/\/[^\/]+$/, '')
   const fileName = file.split('/').pop()
   if (!fileName)
     return
 
-  const fileMetas = await vscode.workspace.fs.readDirectory(vscode.Uri.file(dir))
+  const fileMetas = await Promise.resolve(vscode.workspace.fs.readDirectory(vscode.Uri.file(dir))).catch(() => [])
   let mapFileName = fileMetas.find(([name]) => name === `${fileName}.map`)?.[0]
   mapFileName ??= fileMetas.find(([name]) => name.startsWith(fileName?.split('.')[0]) && name.endsWith('.map'))?.[0]
+
+  const selectedCode = document.getText(editor.selection)
+  const getFullCode = async () => Promise.resolve(vscode.workspace.fs.readFile(vscode.Uri.file(file)).then(buffer => new TextDecoder('utf-8').decode(buffer))).catch(() => document.getText())
+  const code = selectedCode || await getFullCode()
   if (!mapFileName) {
-    vscode.window.setStatusBarMessage('Source map file not found!', 5000)
-    return
+    const lastLine = (selectedCode ? await getFullCode() : code).split('\n').pop() ?? ''
+    if (!lastLine.startsWith('//# sourceMappingURL=')) {
+      vscode.window.setStatusBarMessage('Source map not found!', 5000)
+      return
+    }
+    const map = new TextDecoder('utf-8').decode(Buffer.from(lastLine.split(',').pop() ?? '', 'base64'))
+    if (!map) {
+      vscode.window.setStatusBarMessage('Source map not found!', 5000)
+      return
+    }
+    return { code, map }
   }
 
   const mapFile = `${dir}/${mapFileName}`
 
-  const code = document.getText(editor.selection) || await vscode.workspace.fs.readFile(vscode.Uri.file(file)).then(buffer => new TextDecoder('utf-8').decode(buffer))
   const map = await vscode.workspace.fs.readFile(vscode.Uri.file(mapFile)).then(buffer => new TextDecoder('utf-8').decode(buffer))
 
   return { code, map }
