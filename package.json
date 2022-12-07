@@ -74,7 +74,7 @@
     "@antfu/eslint-config": "^0.33.1",
     "@antfu/ni": "^0.18.8",
     "@types/node": "^18.11.11",
-    "@types/vscode": "^1.73.1",
+    "@types/vscode": "1.69.0",
     "@vscode/vsce": "^2.15.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.29.0",

@@ -4,7 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.33.1
   '@antfu/ni': ^0.18.8
   '@types/node': ^18.11.11
-  '@types/vscode': ^1.73.1
+  '@types/vscode': 1.69.0
   '@vscode/vsce': ^2.15.0
   bumpp: ^8.2.1
   eslint: ^8.29.0
@@ -16,7 +16,7 @@ devDependencies:
   '@antfu/eslint-config': 0.33.1_s5ps7njkmjlaqajutnox5ntcla
   '@antfu/ni': 0.18.8
   '@types/node': 18.11.11
-  '@types/vscode': 1.73.1
+  '@types/vscode': 1.69.0
   '@vscode/vsce': 2.15.0
   bumpp: 8.2.1
   eslint: 8.29.0
@@ -277,8 +277,8 @@ packages:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
 
-  /@types/vscode/1.73.1:
-    resolution: {integrity: sha512-eArfOrAoZVV+Ao9zQOCaFNaeXj4kTCD+bGS2gyNgIFZH9xVMuLMlRrEkhb22NyxycFWKV1UyTh03vhaVHmqVMg==}
+  /@types/vscode/1.69.0:
+    resolution: {integrity: sha512-RlzDAnGqUoo9wS6d4tthNyAdZLxOIddLiX3djMoWk29jFfSA1yJbIwr0epBYqqYarWB6s2Z+4VaZCQ80Jaa3kA==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.45.1_tdm6ms4ntwhlpozn7kjqrhum74:
