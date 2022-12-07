@@ -18,6 +18,14 @@ Right clicks on the minify code. Select `Source Map Visualization` in the contex
 
 ![Demo](https://raw.githubusercontent.com/cncolder/vscode-source-map-visualization/main/docs/demo.gif)
 
+## Development
+
+```bash
+pnpm i
+```
+
+Open VS Code `Run and Debug` panel, select `Extension` to start debugging.
+
 ## Thanks
 
 [evanw/source-map-visualization](https://github.com/evanw/source-map-visualization)
