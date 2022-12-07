@@ -18,6 +18,15 @@ Right clicks on the minify code. Select `Source Map Visualization` in the contex
 
 ![Demo](https://raw.githubusercontent.com/cncolder/vscode-source-map-visualization/main/docs/demo.gif)
 
+## Features
+
+- 🚀 Excellent performance.
+- 💞 Beauty block highlight and connection animation.
+- 🗞 Parse inline source map url.
+- 🔗 Load external source map file.
+- 🪄 Allow code partial selection. e.g. `<script>` tag in html.
+- 🎯 Goto line and column.
+
 ## Development
 
 ```bash
