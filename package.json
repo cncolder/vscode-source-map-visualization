@@ -2,7 +2,7 @@
   "publisher": "colder",
   "name": "source-map-visualization",
   "displayName": "Source Map Visualization",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "packageManager": "pnpm@7.18.1",
   "description": "A simple visualization of source map data",
