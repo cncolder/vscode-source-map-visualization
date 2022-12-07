@@ -15,8 +15,8 @@
           "base": "$ts-webpack-watch",
           "background": {
             "activeOnStart": true,
-            "beginsPattern": "Build start",
-            "endsPattern": "Build success"
+            "beginsPattern": "building for production",
+            "endsPattern": "watching for file changes"
           }
         }
       ],
