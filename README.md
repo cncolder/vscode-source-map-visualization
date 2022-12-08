@@ -29,6 +29,9 @@ Right clicks on the minify code. Select `Source Map Visualization` in the contex
 
 ## Development
 
+[![CI](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/ci.yml/badge.svg)](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/ci.yml)
+[![Release](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/release.yml/badge.svg)](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/release.yml)
+
 ```bash
 pnpm i
 ```
