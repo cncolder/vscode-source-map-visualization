@@ -61,18 +61,17 @@
   },
   "scripts": {
     "build": "vite build",
-    "dev": "nr build --watch",
+    "dev": "vite build --watch",
     "lint": "eslint .",
-    "vscode:prepublish": "nr build",
+    "vscode:prepublish": "vite build",
     "publish": "vsce publish --no-dependencies",
     "pack": "vsce package --no-dependencies",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && nr publish"
+    "release": "bumpp && pnpm publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
-    "@antfu/ni": "^0.18.8",
     "@types/node": "^18.11.11",
     "@types/vscode": "1.69.0",
     "@vscode/vsce": "^2.15.0",
