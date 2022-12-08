@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.33.1
-  '@antfu/ni': ^0.18.8
   '@types/node': ^18.11.11
   '@types/vscode': 1.69.0
   '@vscode/vsce': ^2.15.0
@@ -14,7 +13,6 @@ specifiers:
 
 devDependencies:
   '@antfu/eslint-config': 0.33.1_s5ps7njkmjlaqajutnox5ntcla
-  '@antfu/ni': 0.18.8
   '@types/node': 18.11.11
   '@types/vscode': 1.69.0
   '@vscode/vsce': 2.15.0
@@ -113,11 +111,6 @@ packages:
       - eslint-import-resolver-webpack
       - supports-color
       - typescript
-    dev: true
-
-  /@antfu/ni/0.18.8:
-    resolution: {integrity: sha512-0m++AudwQq+wWAz/Ax7g+sh/wFW51HHQ6BtPLsuTAsFIzWB/bv/0COwZE7BRS+u0nqMb6Ks6nlk6cY1TpPDwHg==}
-    hasBin: true
     dev: true
 
   /@babel/code-frame/7.18.6:
