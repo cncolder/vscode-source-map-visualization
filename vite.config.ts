@@ -1,10 +1,6 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  define: {
-    'import.meta.vitest': false,
-  },
-
   build: {
     lib: {
       entry: 'src/index.ts',
@@ -15,9 +11,10 @@ export default defineConfig({
     rollupOptions: {
       external: ['vscode'],
     },
+  },
 
-    sourcemap: true,
-
+  define: {
+    'import.meta.vitest': false,
   },
 
   test: {
