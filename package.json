@@ -68,7 +68,7 @@
     "vscode:pack": "vsce package --no-dependencies",
     "vscode:prepublish": "pnpm build",
     "vscode:publish": "vsce publish --no-dependencies",
-    "release": "bumpp && pnpm vscode:publish"
+    "release": "bumpp -x 'pnpm vscode:publish'"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
