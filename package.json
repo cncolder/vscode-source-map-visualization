@@ -3,7 +3,6 @@
   "name": "source-map-visualization",
   "displayName": "Source Map Visualization",
   "version": "2.1.0",
-  "private": true,
   "packageManager": "pnpm@7.18.2",
   "description": "A simple visualization of source map data",
   "author": "Colder",
