@@ -3,6 +3,7 @@
   "name": "source-map-visualization",
   "displayName": "Source Map Visualization",
   "version": "2.1.1",
+  "private": true,
   "packageManager": "pnpm@7.18.2",
   "description": "A simple visualization of source map data",
   "author": "Colder",
@@ -62,12 +63,12 @@
     "build": "vite build",
     "dev": "vite build --watch",
     "lint": "eslint .",
-    "vscode:prepublish": "vite build",
-    "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && pnpm publish"
+    "vscode:pack": "vsce package --no-dependencies",
+    "vscode:prepublish": "pnpm build",
+    "vscode:publish": "vsce publish --no-dependencies",
+    "release": "bumpp && pnpm vscode:publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
