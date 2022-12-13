@@ -69,4 +69,3 @@ async function updatePanel(panel: vscode.WebviewPanel) {
     data,
   })
 }
-
