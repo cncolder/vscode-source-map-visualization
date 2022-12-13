@@ -16,7 +16,22 @@ This is a visualization of JavaScript/CSS source map data, which is useful for d
 
 Right clicks on the minify code. Select `Source Map Visualization` in the context menu.
 
+Or press `⌘` `⇧` `P` in the vscode and type `Source Map Visualization`.
+
+Supported source map:
+
+1. Inline base64 source map. `//# sourceMappingURL=data:application/json;base64,`
+2. External source map url. `//# sourceMappingURL=index.js.map`
+3. Sibling code and source map. `index.js` and `index.js.map`.
+4. Guess possible source map. `index.js` and `index.map`.
+
 ![Demo](https://raw.githubusercontent.com/cncolder/vscode-source-map-visualization/main/docs/demo.gif)
+
+### Tips
+
+You can select partial code in the editor. This is useful when you want to visualize the source map of a specific `<script>` tag in html.
+
+You can copy and paste the code to the existed `Source Map Visualization` panel.
 
 ## Features
 

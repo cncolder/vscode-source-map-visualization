@@ -15,6 +15,9 @@
     if (line > 0 && col > 0)
       window.generatedTextArea.scrollTo(col, line - 1)
   })
+  gotoInput.addEventListener('paste', (e) => {
+    e.stopPropagation()
+  })
   toolbar.lastElementChild.appendChild(gotoInput)
 
   const blackhole = document.createElement('div')
