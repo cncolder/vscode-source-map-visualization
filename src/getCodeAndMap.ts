@@ -12,7 +12,7 @@ export async function getCodeAndMap(): Promise<{ code: string; map: string } | u
   if (!code)
     return
 
-  const file = document.fileName
+  const file = document.uri.path
   const dir = file.replace(/\/[^\/]+$/, '')
   const readTextFile = async (relativePath: string) => {
     try {
