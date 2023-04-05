@@ -47,11 +47,19 @@ You can copy and paste the code to the existed `Source Map Visualization` panel.
 [![CI](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/ci.yml/badge.svg)](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/ci.yml)
 [![Release](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/release.yml/badge.svg)](https://github.com/cncolder/vscode-source-map-visualization/actions/workflows/release.yml)
 
-```bash
+```sh
 pnpm i
 ```
 
 Open VS Code `Run and Debug` panel, select `Extension` to start debugging.
+
+## Release
+
+```sh
+pnpm release
+```
+
+This script will bump the version, build the extension, and publish it to the vs code marketplace. And then draft a new release on github.
 
 ## Thanks
 
