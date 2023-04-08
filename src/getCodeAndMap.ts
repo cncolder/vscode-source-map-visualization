@@ -25,6 +25,21 @@ export async function getCodeAndMap(): Promise<{ code: string; map: string } | u
     }
   }
 
+  const addMissingSourceContent = async (map: string) => {
+    const json = JSON.parse(map)
+    const { sources, sourcesContent } = json
+    let addedSourceContent = false
+    for (let i = 0; i < sources.length; i++) {
+      if (!sourcesContent[i] && sources[i]) {
+        addedSourceContent = true
+        sourcesContent[i] = await readTextFile(sources[i])
+      }
+    }
+    if (addedSourceContent)
+      map = JSON.stringify(json)
+    return map
+  }
+
   const mapUrl = getSourceMapUrl(code)
   if (mapUrl) {
     if (mapUrl.startsWith('data:')) {
@@ -57,9 +72,11 @@ export async function getCodeAndMap(): Promise<{ code: string; map: string } | u
       = mapFiles.find(f => f === `${fileName}.map`)
       || mapFiles.find(f => fileName.startsWith(f.split('.')[0]))
     if (mapFile) {
-      const map = await readTextFile(mapFile)
-      if (map)
+      let map = await readTextFile(mapFile)
+      if (map) {
+        map = await addMissingSourceContent(map)
         return { code, map }
+      }
     }
   }
 }
