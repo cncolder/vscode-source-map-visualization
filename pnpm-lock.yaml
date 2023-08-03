@@ -8,7 +8,7 @@ specifiers:
   bumpp: ^8.2.1
   eslint: ^8.29.0
   typescript: ^4.9.4
-  vite: ^4.0.1
+  vite: ^4.0.5
   vitest: ^0.25.8
 
 devDependencies:
@@ -19,7 +19,7 @@ devDependencies:
   bumpp: 8.2.1
   eslint: 8.29.0
   typescript: 4.9.4
-  vite: 4.0.1_@types+node@18.11.14
+  vite: 4.0.5_@types+node@18.11.14
   vitest: 0.25.8
 
 packages:
@@ -2945,8 +2945,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite/4.0.1_@types+node@18.11.14:
-    resolution: {integrity: sha512-kZQPzbDau35iWOhy3CpkrRC7It+HIHtulAzBhMqzGHKRf/4+vmh8rPDDdv98SWQrFWo6//3ozwsRmwQIPZsK9g==}
+  /vite/4.0.5_@types+node@18.11.14:
+    resolution: {integrity: sha512-7m87RC+caiAxG+8j3jObveRLqaWA/neAdCat6JAZwMkSWqFHOvg8MYe5fAQxVBRAuKAQ1S6XDh3CBQuLNbY33w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3014,7 +3014,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 4.0.1_@types+node@18.11.14
+      vite: 4.0.5_@types+node@18.11.14
     transitivePeerDependencies:
       - less
       - sass
